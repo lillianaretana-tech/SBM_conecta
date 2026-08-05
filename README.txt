@@ -1,5 +1,10 @@
-SBM Conecta - Edición Agosto 2026
+SBM CONECTA - AGOSTO 2026 (REVISTA INTERACTIVA)
 
-1. Abra index.html en un navegador.
-2. Para publicar en GitHub Pages o Vercel, suba toda la carpeta manteniendo su estructura.
-3. Las imágenes están en /assets y los PDF originales en /docs.
+Suba a GitHub el contenido completo de esta carpeta, conservando exactamente la estructura:
+- index.html
+- styles.css
+- app.js
+- assets/
+- docs/
+
+La navegación funciona como una aplicación de una sola página: cada sección se abre como una pantalla independiente y las publicaciones se muestran como artículos completos.

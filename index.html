@@ -2,157 +2,151 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ef6c23">
+  <meta name="description" content="SBM Conecta, revista digital interactiva de agosto 2026.">
   <title>SBM Conecta | Agosto 2026</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="SBM Conecta, inicio">
-      <span class="brand-mark">▲</span>
-      <span class="brand-sbm">sbm</span>
-      <span class="brand-connect">Conecta</span>
-    </a>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">☰</button>
-    <nav id="siteNav" class="nav">
-      <a href="#destacados">Destacados</a>
-      <a href="#ehs">EHS</a>
-      <a href="#rh">Recursos Humanos</a>
-      <a href="#innovacion">Innovación</a>
-      <a href="#documentos">Documentos</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand nav-link" data-view="portada" aria-label="Ir a la portada">
+        <span class="brand-mark">▲</span>
+        <span class="brand-sbm">sbm</span>
+        <span class="brand-connect">Conecta</span>
+      </button>
+      <nav class="desktop-nav" aria-label="Secciones principales">
+        <button class="nav-link active" data-view="portada">Inicio</button>
+        <button class="nav-link" data-view="destacados">Destacados</button>
+        <button class="nav-link" data-view="ehs">EHS / Seguridad</button>
+        <button class="nav-link" data-view="rh">Recursos Humanos</button>
+        <button class="nav-link" data-view="innovacion">Innovación</button>
+        <button class="nav-link" data-view="documentos">Documentos</button>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </header>
+
+    <aside class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+      <button class="nav-link" data-view="portada">Inicio</button>
+      <button class="nav-link" data-view="destacados">Destacados</button>
+      <button class="nav-link" data-view="ehs">EHS / Seguridad</button>
+      <button class="nav-link" data-view="rh">Recursos Humanos</button>
+      <button class="nav-link" data-view="innovacion">Innovación</button>
+      <button class="nav-link" data-view="documentos">Documentos</button>
+    </aside>
+
+    <main class="views" id="views">
+      <section class="view active cover-view" id="view-portada" data-title="Portada">
+        <img class="cover-image" src="assets/portada-sbm-conecta.png" alt="Portada SBM Conecta Agosto 2026">
+        <div class="cover-overlay">
+          <span class="cover-label">Revista digital corporativa</span>
+          <h1>Agosto 2026</h1>
+          <p>Historias que inspiran. Innovación que transforma. Seguridad que nos protege.</p>
+          <div class="cover-actions">
+            <button class="btn primary nav-link" data-view="destacados">Abrir edición</button>
+            <a class="btn glass" href="docs/reporte-inmediato-accidentes.pdf" target="_blank" rel="noopener">Ver un comunicado</a>
+          </div>
+        </div>
+        <button class="next-screen nav-link" data-view="destacados" aria-label="Continuar a destacados">›</button>
+      </section>
+
+      <section class="view" id="view-destacados" data-title="Destacados">
+        <div class="view-head">
+          <div><span class="eyebrow">Edición Agosto 2026</span><h2>Lo más destacado</h2></div>
+          <p>Seleccione una historia para abrirla como artículo completo.</p>
+        </div>
+        <div class="feature-layout">
+          <article class="lead-story article-link" data-article="accidentes" tabindex="0">
+            <img src="assets/reporte_accidentes/page-1.png" alt="Reporte inmediato de accidentes">
+            <div class="story-overlay">
+              <span class="tag ehs">EHS / Seguridad</span>
+              <h3>Reporte inmediato de accidentes</h3>
+              <p>Así se gestiona un accidente laboral, desde el reporte inicial hasta el cierre y seguimiento.</p>
+              <span class="read-more">Leer historia →</span>
+            </div>
+          </article>
+          <div class="story-stack">
+            <article class="mini-story article-link" data-article="goodcatch" tabindex="0">
+              <img src="assets/good_catch/page-1.png" alt="Good Catch destacados">
+              <div><span class="tag recognition">Reconocimiento</span><h3>Good Catch del mes</h3><p>Stefany, Pamela y Francis convierten pequeños detalles en grandes prevenciones.</p></div>
+            </article>
+            <article class="mini-story article-link" data-article="rotulos" tabindex="0">
+              <img src="assets/innovacion_1/page-1.png" alt="Rotulaciones magnéticas">
+              <div><span class="tag innovation">Innovación</span><h3>Rotulaciones magnéticas</h3><p>Mayor visibilidad y control de acceso durante tareas de limpieza.</p></div>
+            </article>
+          </div>
+        </div>
+        <div class="quick-stats" aria-label="Resumen de la edición">
+          <button class="stat-card nav-link" data-view="ehs"><strong>13</strong><span>días sin accidentes registrables</span></button>
+          <button class="stat-card article-link" data-article="estadisticas"><strong>24</strong><span>eventos reportados en julio</span></button>
+          <button class="stat-card nav-link" data-view="innovacion"><strong>2</strong><span>innovaciones destacadas</span></button>
+        </div>
+      </section>
+
+      <section class="view" id="view-ehs" data-title="EHS / Seguridad">
+        <div class="view-head"><div><span class="eyebrow">Seguridad primero</span><h2>EHS / Safety</h2></div><p>Información práctica, resultados y reconocimientos para cuidar a todo el equipo.</p></div>
+        <div class="horizontal-deck">
+          <article class="section-card article-link" data-article="accidentes" tabindex="0"><div class="icon-badge">!</div><span class="tag ehs">Procedimiento</span><h3>Reporte inmediato de accidentes</h3><p>Conozca el flujo paso a paso y las responsabilidades para cerrar el evento a tiempo.</p><span class="read-more">Abrir artículo →</span></article>
+          <article class="section-card article-link" data-article="estadisticas" tabindex="0"><div class="metric-circle">13</div><span class="tag ehs">Resultados</span><h3>Reporte de eventos</h3><p>24 eventos registrados durante julio: RO 10, NWR 13, FA 0 y REC 1.</p><span class="read-more">Ver estadísticas →</span></article>
+          <article class="section-card article-link" data-article="goodcatch" tabindex="0"><div class="icon-badge">★</div><span class="tag recognition">Good Catch</span><h3>Personas que previenen</h3><p>Reconocimiento a quienes identificaron riesgos y ayudaron a prevenir incidentes.</p><span class="read-more">Ver reconocimiento →</span></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-rh" data-title="Recursos Humanos">
+        <div class="view-head"><div><span class="eyebrow">Personas y cultura</span><h2>Recursos Humanos</h2></div><p>Información para fortalecer el orden, la comunicación y el trabajo en equipo.</p></div>
+        <div class="tile-grid">
+          <article class="visual-tile article-link" data-article="asistencia" tabindex="0"><img src="assets/rh/page-1.png" alt="Mejoremos la asistencia al trabajo"><div><h3>Asistencia laboral</h3><p>Puntualidad, avisos y comprobantes médicos.</p></div></article>
+          <article class="visual-tile article-link" data-article="telefono" tabindex="0"><img src="assets/rh/page-2.png" alt="Uso del teléfono 4Insite"><div><h3>Uso del teléfono 4Insite</h3><p>Uso exclusivo laboral, resguardo y cuidado.</p></div></article>
+          <article class="visual-tile article-link" data-article="equipo" tabindex="0"><img src="assets/rh/page-3.png" alt="Somos un equipo de trabajo"><div><h3>Somos un equipo</h3><p>Respeto, comunicación y objetivos comunes.</p></div></article>
+          <article class="text-tile article-link" data-article="politica" tabindex="0"><span class="tile-number">10</span><h3>Política Integrada</h3><p>Requerimientos que fortalecen la cultura de excelencia y mejora continua.</p></article>
+          <article class="text-tile article-link" data-article="problema" tabindex="0"><span class="tile-symbol">?</span><h3>¿Qué hacer ante un problema?</h3><p>Expresar inquietudes y solicitar ayuda es parte de una cultura responsable.</p></article>
+          <article class="text-tile article-link" data-article="cuartolimpio" tabindex="0"><span class="tile-symbol">!</span><h3>Situación accidental</h3><p>Detenga el trabajo, informe y nunca manipule el producto del cliente.</p></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-innovacion" data-title="Innovación">
+        <div class="view-head"><div><span class="eyebrow">Ideas que transforman</span><h2>Programa de Innovación</h2></div><p>Soluciones creadas desde la experiencia diaria para mejorar seguridad, durabilidad y eficiencia.</p></div>
+        <div class="innovation-slider">
+          <article class="innovation-feature article-link" data-article="rotulos" tabindex="0"><img src="assets/innovacion_1/page-1.png" alt="Rotulaciones magnéticas"><div><span class="tag innovation">Edwards Lifesciences</span><h3>Rotulaciones magnéticas</h3><p>Una solución visible en puertas y accesos para advertir al personal y restringir el ingreso durante limpiezas.</p><span class="read-more">Conocer la innovación →</span></div></article>
+          <article class="innovation-feature article-link" data-article="portaelementos" tabindex="0"><img src="assets/innovacion_2/page-1.png" alt="Porta elementos metálico"><div><span class="tag innovation">Hologic</span><h3>Porta elementos metálico</h3><p>Una estructura más resistente, adaptable y de bajo mantenimiento para el uso constante de la industria.</p><span class="read-more">Conocer la innovación →</span></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-documentos" data-title="Documentos">
+        <div class="view-head"><div><span class="eyebrow">Material original</span><h2>Documentos de la edición</h2></div><p>Abra o descargue los comunicados oficiales en PDF.</p></div>
+        <div class="document-grid">
+          <a href="docs/reporte-inmediato-accidentes.pdf" target="_blank" rel="noopener"><span>01</span><div><strong>Reporte inmediato de accidentes</strong><small>EHS / Seguridad</small></div><b>PDF</b></a>
+          <a href="docs/estadisticas-ehs.pdf" target="_blank" rel="noopener"><span>02</span><div><strong>Estadísticas EHS</strong><small>Reporte de eventos</small></div><b>PDF</b></a>
+          <a href="docs/good-catch.pdf" target="_blank" rel="noopener"><span>03</span><div><strong>Reconocimientos Good Catch</strong><small>Prevención y compromiso</small></div><b>PDF</b></a>
+          <a href="docs/recursos-humanos-agosto.pdf" target="_blank" rel="noopener"><span>04</span><div><strong>Pizarra de Recursos Humanos</strong><small>Agosto 2026</small></div><b>PDF</b></a>
+          <a href="docs/politica-integrada.pdf" target="_blank" rel="noopener"><span>05</span><div><strong>Política Integrada</strong><small>Sistema de Gestión</small></div><b>PDF</b></a>
+          <a href="docs/pedir-ayuda.pdf" target="_blank" rel="noopener"><span>06</span><div><strong>Qué hacer ante un problema</strong><small>Comunicación y ayuda</small></div><b>PDF</b></a>
+          <a href="docs/incidente-cuarto-limpio.pdf" target="_blank" rel="noopener"><span>07</span><div><strong>Situación accidental en cuarto limpio</strong><small>Procedimiento</small></div><b>PDF</b></a>
+          <a href="docs/innovacion-rotulos-magneticos.pdf" target="_blank" rel="noopener"><span>08</span><div><strong>Rotulaciones magnéticas</strong><small>Innovación</small></div><b>PDF</b></a>
+          <a href="docs/innovacion-porta-elementos.pdf" target="_blank" rel="noopener"><span>09</span><div><strong>Porta elementos metálico</strong><small>Innovación</small></div><b>PDF</b></a>
+        </div>
+      </section>
+
+      <section class="view article-view" id="view-articulo" data-title="Artículo">
+        <button class="back-btn" id="backBtn">← Volver</button>
+        <article class="article-page">
+          <div class="article-copy"><span class="tag" id="articleTag"></span><h2 id="articleTitle"></h2><p class="article-lead" id="articleLead"></p><div id="articleBody"></div><div class="article-actions"><a class="btn primary" id="articlePdf" target="_blank" rel="noopener">Abrir PDF oficial</a><button class="btn ghost" id="fullImageBtn">Ver lámina completa</button></div></div>
+          <div class="article-media"><img id="articleImage" alt="Publicación completa"></div>
+        </article>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegación móvil">
+      <button class="nav-link active" data-view="portada"><span>⌂</span><small>Inicio</small></button>
+      <button class="nav-link" data-view="destacados"><span>▤</span><small>Noticias</small></button>
+      <button class="nav-link" data-view="ehs"><span>✓</span><small>Seguridad</small></button>
+      <button class="nav-link" data-view="rh"><span>♙</span><small>Personas</small></button>
+      <button class="nav-link" data-view="innovacion"><span>✦</span><small>Innovación</small></button>
     </nav>
-  </header>
+  </div>
 
-  <main id="inicio">
-    <section class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">Edición mensual</span>
-        <h1>Agosto 2026</h1>
-        <p class="hero-kicker">Tu fuente de información, <strong>nuestro compromiso.</strong></p>
-        <p class="hero-intro">Entérate de las noticias, logros y novedades que nos mantienen conectados y avanzando juntos.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#destacados">Leer edición completa</a>
-          <a class="btn ghost" href="#documentos">Descargar en PDF</a>
-        </div>
-      </div>
-
-      <div class="hero-cover" aria-label="Portada de SBM Conecta, edición agosto 2026">
-        <div class="cover-paper">
-          <div class="cover-topline"><span>SBM</span><em>Conecta</em><small>Agosto 2026</small></div>
-          <h2>Noticias que construyen un mejor lugar para trabajar</h2>
-          <img src="assets/good_catch/page-1.png" alt="Reconocimientos Good Catch destacados en agosto">
-          <div class="cover-footer">
-            <span>Seguridad</span><span>Personas</span><span>Innovación</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-stats" aria-label="Resumen de la edición">
-        <article><strong>13</strong><span>días sin accidentes registrables</span></article>
-        <article><strong>24</strong><span>eventos reportados en julio</span></article>
-        <article><strong>2</strong><span>innovaciones destacadas</span></article>
-      </div>
-    </section>
-
-    <section class="section" id="destacados">
-      <div class="section-heading">
-        <div><span class="eyebrow">Lo más importante</span><h2>Destacados de agosto</h2></div>
-      </div>
-      <div class="grid cards-3">
-        <article class="card feature">
-          <div class="card-image"><img src="assets/reporte_accidentes/page-1.png" alt="Infografía sobre reporte inmediato de accidentes"></div>
-          <div class="card-body"><span class="tag ehs">EHS</span><h3>Reporte inmediato de accidentes</h3><p>Conozca el flujo desde el reporte inicial hasta el cierre y seguimiento del caso.</p><button class="text-btn open-image" data-image="assets/reporte_accidentes/page-1.png">Ver infografía</button></div>
-        </article>
-        <article class="card feature">
-          <div class="card-image"><img src="assets/good_catch/page-1.png" alt="Reconocimiento Good Catch de agosto"></div>
-          <div class="card-body"><span class="tag recognition">Reconocimiento</span><h3>Good Catch destacados</h3><p>Stefany Sánchez, Pamela Badilla y Francis Pérez fueron reconocidas por su compromiso con la prevención.</p><button class="text-btn open-image" data-image="assets/good_catch/page-1.png">Ver reconocimiento</button></div>
-        </article>
-        <article class="card feature">
-          <div class="card-image"><img src="assets/innovacion_1/page-1.png" alt="Innovación de rotulaciones magnéticas"></div>
-          <div class="card-body"><span class="tag innovation">Innovación</span><h3>Rotulaciones magnéticas</h3><p>Una solución para mejorar la visibilidad y restringir el acceso a áreas donde se realizan limpiezas.</p><button class="text-btn open-image" data-image="assets/innovacion_1/page-1.png">Ver innovación</button></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section alt" id="ehs">
-      <div class="section-heading">
-        <div><span class="eyebrow">Seguridad primero</span><h2>EHS - Safety</h2></div>
-      </div>
-      <div class="grid split">
-        <article class="stat-panel">
-          <div class="ring"><span>13</span><small>días sin accidentes registrables</small></div>
-          <div class="stat-list">
-            <div><span>RO</span><strong>10</strong></div>
-            <div><span>NWR</span><strong>13</strong></div>
-            <div><span>FA</span><strong>0</strong></div>
-            <div><span>REC</span><strong>1</strong></div>
-          </div>
-          <button class="btn small open-image" data-image="assets/estadisticas/page-1.png">Ver estadísticas completas</button>
-        </article>
-        <article class="content-panel">
-          <h3>Así se gestiona un accidente laboral</h3>
-          <ol class="timeline">
-            <li><strong>Reporte inmediato</strong><span>El funcionario informa de inmediato a su líder o supervisor.</span></li>
-            <li><strong>Reporte interno e investigación</strong><span>Se documenta el caso, se propone un plan de acción y EHS recopila la información.</span></li>
-            <li><strong>Clasificación y registro</strong><span>EHS clasifica el evento y el site registra la documentación en Gestión Documental y 4Insite.</span></li>
-            <li><strong>Cierre y seguimiento</strong><span>El proyecto implementa las acciones, entrega evidencias y EHS formaliza el cierre.</span></li>
-          </ol>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="rh">
-      <div class="section-heading">
-        <div><span class="eyebrow">Información para el equipo</span><h2>Recursos Humanos</h2></div>
-      </div>
-      <div class="grid cards-3">
-        <article class="card compact"><img src="assets/rh/page-1.png" alt="Mejoremos la asistencia al trabajo"><div class="card-body"><h3>Asistencia laboral</h3><p>Recordatorios sobre puntualidad, avisos y comprobantes médicos.</p><button class="text-btn open-image" data-image="assets/rh/page-1.png">Abrir</button></div></article>
-        <article class="card compact"><img src="assets/rh/page-2.png" alt="Uso del teléfono 4Insite"><div class="card-body"><h3>Uso del teléfono 4Insite</h3><p>Lineamientos para el uso, resguardo y cuidado del dispositivo asignado.</p><button class="text-btn open-image" data-image="assets/rh/page-2.png">Abrir</button></div></article>
-        <article class="card compact"><img src="assets/rh/page-3.png" alt="Somos un equipo de trabajo"><div class="card-body"><h3>Somos un equipo</h3><p>Respeto, comunicación, objetivos comunes, reconocimiento y cumplimiento.</p><button class="text-btn open-image" data-image="assets/rh/page-3.png">Abrir</button></div></article>
-      </div>
-      <div class="grid cards-3 secondary-row">
-        <article class="text-card"><span class="icon">✓</span><h3>Política integrada</h3><p>Procesos, indicadores, disciplina documental, responsabilidades, mejora continua y seguimiento de métricas.</p><button class="text-btn open-image" data-image="assets/comunicado_1/page-1.png">Ver comunicado</button></article>
-        <article class="text-card"><span class="icon">?</span><h3>¿Qué hacer ante un problema?</h3><p>Todo colaborador tiene derecho a expresar inquietudes y solicitar ayuda en áreas comunes o cuartos limpios.</p><button class="text-btn open-image" data-image="assets/comunicado_2/page-1.png">Ver comunicado</button></article>
-        <article class="text-card"><span class="icon">!</span><h3>Incidente en cuarto limpio</h3><p>Detenga el trabajo, informe al supervisor y nunca manipule materiales o producto terminado del cliente.</p><button class="text-btn open-image" data-image="assets/comunicado_3/page-1.png">Ver comunicado</button></article>
-      </div>
-    </section>
-
-    <section class="section alt" id="innovacion">
-      <div class="section-heading">
-        <div><span class="eyebrow">Ideas que mejoran el trabajo</span><h2>Programa de Innovación</h2></div>
-      </div>
-      <div class="grid cards-2">
-        <article class="innovation-card"><img src="assets/innovacion_1/page-1.png" alt="Rotulaciones magnéticas"><div><span class="tag innovation">Edwards Lifesciences</span><h3>Rotulaciones magnéticas</h3><p><strong>Problema:</strong> señalizaciones poco visibles durante limpiezas en cuartos limpios o detrás de puertas.</p><p><strong>Solución:</strong> rótulos magnéticos en entradas y accesos específicos para advertir y restringir el ingreso.</p><button class="btn small open-image" data-image="assets/innovacion_1/page-1.png">Ver ficha completa</button></div></article>
-        <article class="innovation-card"><img src="assets/innovacion_2/page-1.png" alt="Porta elementos metálico"><div><span class="tag innovation">Hologic</span><h3>Porta elementos metálico</h3><p><strong>Problema:</strong> los soportes plásticos se desgastan y deben reemplazarse con frecuencia.</p><p><strong>Solución:</strong> estructura metálica más resistente, adaptable y de bajo mantenimiento.</p><button class="btn small open-image" data-image="assets/innovacion_2/page-1.png">Ver ficha completa</button></div></article>
-      </div>
-    </section>
-
-    <section class="section" id="documentos">
-      <div class="section-heading">
-        <div><span class="eyebrow">Material original</span><h2>Documentos de la edición</h2></div>
-      </div>
-      <div class="downloads">
-        <a href="docs/reporte-inmediato-accidentes.pdf" target="_blank">Reporte inmediato de accidentes <span>PDF</span></a>
-        <a href="docs/estadisticas-ehs.pdf" target="_blank">Estadísticas EHS <span>PDF</span></a>
-        <a href="docs/good-catch.pdf" target="_blank">Reconocimientos Good Catch <span>PDF</span></a>
-        <a href="docs/politica-integrada.pdf" target="_blank">Política Integrada <span>PDF</span></a>
-        <a href="docs/pedir-ayuda.pdf" target="_blank">Qué hacer ante un problema <span>PDF</span></a>
-        <a href="docs/incidente-cuarto-limpio.pdf" target="_blank">Qué hacer accidentalmente <span>PDF</span></a>
-        <a href="docs/recursos-humanos-agosto.pdf" target="_blank">Pizarra de Recursos Humanos <span>PDF</span></a>
-        <a href="docs/innovacion-rotulos-magneticos.pdf" target="_blank">Innovación: rotulaciones magnéticas <span>PDF</span></a>
-        <a href="docs/innovacion-porta-elementos.pdf" target="_blank">Innovación: porta elementos <span>PDF</span></a>
-      </div>
-    </section>
-  </main>
-
-  <footer><strong>SBM Conecta</strong><span>Edición Agosto 2026</span></footer>
-
-  <dialog id="viewer">
-    <button class="close" id="closeViewer" aria-label="Cerrar">×</button>
-    <img id="viewerImage" alt="Vista ampliada del comunicado">
-  </dialog>
-
+  <dialog id="viewer"><button class="close" id="closeViewer" aria-label="Cerrar">×</button><img id="viewerImage" alt="Vista ampliada del comunicado"></dialog>
   <script src="app.js"></script>
 </body>
 </html>
