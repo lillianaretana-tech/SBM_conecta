@@ -1,10 +1,12 @@
-SBM CONECTA - AGOSTO 2026 (REVISTA INTERACTIVA)
+SBM Conecta - Edición Setiembre 2026
 
-Suba a GitHub el contenido completo de esta carpeta, conservando exactamente la estructura:
+Contenido de esta carpeta:
 - index.html
 - styles.css
 - app.js
-- assets/
-- docs/
+- assets/ (solo imágenes utilizadas por la edición de setiembre)
+- docs/ (solo los 7 documentos oficiales de la edición)
 
-La navegación funciona como una aplicación de una sola página: cada sección se abre como una pantalla independiente y las publicaciones se muestran como artículos completos.
+Para GitHub Pages, suba el CONTENIDO de esta carpeta a la raíz del repositorio.
+Esta versión fue depurada para no incluir los archivos editoriales de agosto.
+Nota: las estadísticas EHS se titulan "Agosto 2026" porque son el reporte del mes anterior incluido en la pizarra de setiembre.

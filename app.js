@@ -1,80 +1,18 @@
 const articleData = {
-  accidentes: {tag:'EHS / Seguridad',tagClass:'ehs',title:'Reporte inmediato de accidentes',lead:'Así se gestiona un accidente laboral, paso a paso.',body:'<ol><li><strong>Reporte inmediato:</strong> el funcionario informa de inmediato a su líder o supervisor.</li><li><strong>Reporte interno a EHS:</strong> se genera el reporte, se investiga y se propone un plan de acción.</li><li><strong>Investigación y clasificación:</strong> EHS recopila la información, recomienda acciones y clasifica el evento.</li><li><strong>Registro y cierre:</strong> el site registra el caso en Gestión Documental y 4Insite; el proyecto implementa las acciones y entrega evidencias.</li></ol><p><strong>La respuesta de líderes, supervisores y encargados de proyecto es clave</strong> para facilitar el cierre del evento a tiempo.</p>',image:'assets/reporte_accidentes/page-1.png',pdf:'docs/reporte-inmediato-accidentes.pdf'},
-  estadisticas: {tag:'EHS / Resultados',tagClass:'ehs',title:'Reporte de eventos – Julio 2026',lead:'13 días sin accidentes registrables y 24 eventos reportados durante julio.',body:'<ul><li><strong>RO:</strong> 10</li><li><strong>NWR:</strong> 13</li><li><strong>FA:</strong> 0</li><li><strong>REC:</strong> 1</li></ul><p>Los datos fueron tomados de 4Insite al 30 de julio de 2026.</p>',image:'assets/estadisticas/page-1.png',pdf:'docs/estadisticas-ehs.pdf'},
-  goodcatch: {tag:'Reconocimiento',tagClass:'recognition',title:'Good Catch destacados',lead:'Una mirada atenta puede convertir pequeños detalles en grandes prevenciones.',body:'<p>Felicitaciones a <strong>Stefany Sánchez</strong> de Abbott Vascular, <strong>Pamela Badilla</strong> de Terumo Neuro y <strong>Francis Pérez</strong> de Edwards Lifesciences.</p><p>Su compromiso ayuda a cuidar al equipo y fortalece la cultura de seguridad.</p>',image:'assets/good_catch/page-1.png',pdf:'docs/good-catch.pdf'},
-  asistencia: {tag:'Recursos Humanos',tagClass:'recognition',title:'Mejoremos la asistencia al trabajo',lead:'La puntualidad y la comunicación oportuna ayudan a mantener una operación organizada.',body:'<ul><li>Evite las llegadas tardías.</li><li>Avise cuando tenga un contratiempo o no pueda presentarse.</li><li>Recuerde que un comprobante médico no es una incapacidad.</li></ul>',image:'assets/rh/page-1.png',pdf:'docs/recursos-humanos-agosto.pdf'},
-  telefono: {tag:'Recursos Humanos',tagClass:'recognition',title:'Uso del teléfono 4Insite',lead:'El dispositivo asignado es una herramienta de trabajo y debe permanecer en el proyecto.',body:'<ul><li>Uso exclusivo laboral.</li><li>No instalar aplicaciones no autorizadas.</li><li>Dejarlo en el lugar pactado antes de salir.</li><li>Mantenerlo limpio e informar cualquier inconveniente.</li></ul>',image:'assets/rh/page-2.png',pdf:'docs/recursos-humanos-agosto.pdf'},
-  equipo: {tag:'Recursos Humanos',tagClass:'recognition',title:'Somos un equipo de trabajo',lead:'El respeto, la confianza y la comunicación nos permiten alcanzar objetivos comunes.',body:'<p>Trabajamos mejor cuando respetamos a los compañeros y al cliente, aceptamos la autoridad, reconocemos los logros, cumplimos los horarios y acudimos a la Política de Puertas Abiertas cuando corresponde.</p>',image:'assets/rh/page-3.png',pdf:'docs/recursos-humanos-agosto.pdf'},
-  politica: {tag:'Comunicado general',tagClass:'recognition',title:'Política Integrada del Sistema de Gestión',lead:'Diez requerimientos que fortalecen nuestra cultura organizacional.',body:'<p>Cumplir los procesos, dar seguimiento real a los indicadores, mantener disciplina documental, conocer los roles, asegurar capacidades adecuadas, cumplir requisitos, promover la mejora continua, corregir causas raíz, seguir procedimientos y participar en los resultados de métricas.</p>',image:'assets/comunicado_1/page-1.png',pdf:'docs/politica-integrada.pdf'},
-  problema: {tag:'Comunicado general',tagClass:'recognition',title:'¿Qué hacer cuando se presenta un problema?',lead:'Todo colaborador tiene derecho a expresar sus inquietudes y solicitar ayuda.',body:'<p>Esto aplica tanto en áreas comunes como en cuartos limpios. Pedir ayuda oportunamente protege la operación, la calidad y el trabajo de nuestros clientes.</p>',image:'assets/comunicado_2/page-1.png',pdf:'docs/pedir-ayuda.pdf'},
-  cuartolimpio: {tag:'Comunicado general',tagClass:'ehs',title:'¿Qué hacer cuando ocurre una situación accidental?',lead:'Mantenga la calma, detenga el trabajo e informe de inmediato.',body:'<ul><li>Preste atención al entorno y muévase cuidadosamente.</li><li>Si toca accidentalmente equipos o materiales, pare el trabajo.</li><li>Nunca toque ni intente reacomodar el producto terminado del cliente.</li></ul>',image:'assets/comunicado_3/page-1.png',pdf:'docs/incidente-cuarto-limpio.pdf'},
-  rotulos: {tag:'Innovación',tagClass:'innovation',title:'Rotulaciones magnéticas',lead:'Una señalización más visible para prevenir ingresos durante tareas de limpieza.',body:'<p><strong>Problema:</strong> algunas personas no respetaban las señalizaciones mientras SBM realizaba limpiezas en cuartos limpios o detrás de una puerta.</p><p><strong>Solución:</strong> instalar rótulos magnéticos en entradas y áreas específicas.</p><p><strong>Beneficio:</strong> mayor visibilidad y acceso restringido cuando existe un riesgo, como un piso mojado.</p>',image:'assets/innovacion_1/page-1.png',pdf:'docs/innovacion-rotulos-magneticos.pdf'},
-  portaelementos: {tag:'Innovación',tagClass:'innovation',title:'Porta elementos metálico',lead:'Mayor resistencia, adaptación y duración para el uso constante de la industria.',body:'<p><strong>Problema:</strong> los soportes plásticos se desgastan rápidamente.</p><p><strong>Solución:</strong> sustituirlos por una estructura metálica simple y resistente.</p><p><strong>Beneficios:</strong> soporta mayor peso, reduce la fricción, requiere poco mantenimiento y puede fabricarse en distintas medidas.</p>',image:'assets/innovacion_2/page-1.png',pdf:'docs/innovacion-porta-elementos.pdf'}
+  iso:{tag:'Destacado',tagClass:'recognition',title:'¡Somos ISO 9001!',lead:'Un logro que refleja meses de trabajo, dedicación y compromiso con la calidad.',body:'<p>SBM obtuvo la certificación <strong>ISO 9001</strong>, un estándar internacional reconocido en gestión de calidad.</p><p>Este logro valida un sistema estructurado orientado a la satisfacción del cliente, la gestión de riesgos y la mejora continua, y fortalece la capacidad de ofrecer servicios consistentes y medibles.</p><p>La certificación es resultado del compromiso de todos para documentar, medir y mejorar continuamente los procesos.</p>',image:'assets/iso_sep/page-1.png',pdf:'docs/iso-9001-setiembre.pdf'},
+  crecimiento:{tag:'Nuestra Gente',tagClass:'recognition',title:'Piensa en Grande: SBM te da la posibilidad de crecer',lead:'Celebramos a quienes asumieron nuevos retos dentro de nuestros equipos.',body:'<p><strong>Johnson & Johnson Grecia:</strong> Laura Murillo y Nicole Calero, nuevas líderes.</p><p><strong>Medtronic Coyol:</strong> Heiner Fuentes, nuevo coordinador; Melissa Morera y José Soto, nuevos líderes.</p><p><strong>Emerson:</strong> Griselda Díaz, nueva líder; Bryan Torres, nuevo coordinador.</p><p><strong>McKinsey:</strong> Melissa Ruiz, nueva coordinadora; José Manuel Rodríguez, nuevo líder.</p><p>SBM invita a participar en concursos internos y a desarrollar capacidades y talentos para abrir nuevas oportunidades.</p>',image:'assets/promociones_sep/page-1.png',pdf:'docs/crecimiento-interno-setiembre.pdf'},
+  emerson:{tag:'Nuestra Operación',tagClass:'innovation',title:'Bienvenido, Emerson',lead:'Celebramos la transición oficial de una nueva área de servicio de limpieza general en Costa Rica.',body:'<p>SBM da la bienvenida a <strong>Emerson</strong>, ubicada en Escazú.</p><p>La transición oficial fue realizada con éxito por <strong>John Rincón y Lilliana Retana</strong>, encargados de la transición y el proyecto.</p><p>Muchos éxitos a <strong>Brayan Torres</strong>, nuevo coordinador del proyecto, con la guía de Lilliana Retana.</p>',image:'assets/emerson_sep/page-1.png',pdf:'docs/transicion-emerson-setiembre.pdf'},
+  estadisticas:{tag:'EHS / Seguridad',tagClass:'ehs',title:'Reporte de eventos – Agosto 2026',lead:'43 días sin accidentes registrables y 33 eventos reportados durante agosto.',body:'<ul><li><strong>21</strong> eventos relacionados con el trabajo.</li><li><strong>12</strong> eventos no relacionados con el trabajo.</li><li><strong>Total:</strong> 33 eventos.</li></ul><p>Datos tomados de 4INSITE al 30 de agosto de 2026.</p>',image:'assets/estadisticas_sep/page-1.png',pdf:'docs/estadisticas-ehs-setiembre.pdf'},
+  goodcatch:{tag:'Good Catch',tagClass:'recognition',title:'¡Gracias por marcar la diferencia!',lead:'La atención y dedicación convierten pequeños detalles en una gran prevención.',body:'<p>Reconocemos a <strong>Stefany Sánchez</strong> de Abbott Vascular (Good Catch 175), <strong>Marvin Morera</strong> de HP-JLL (118) y <strong>Yureysi Fajardo</strong> de Abbott Vascular (111).</p><p>Su compromiso con la seguridad inspira a todo el equipo. Cuidar también es liderar.</p>',image:'assets/good_catch_sep/page-1.png',pdf:'docs/good-catch-setiembre.pdf'},
+  materiales:{tag:'EHS / Prevención',tagClass:'ehs',title:'Manejo y traslado seguro de materiales y equipos',lead:'Buenas prácticas para labores de limpieza, paso a paso.',body:'<ul><li><strong>Evalúe antes de mover:</strong> revise peso, tamaño y estado; el peso máximo para manipular solo es 15 kg.</li><li><strong>Use la técnica correcta:</strong> doble las rodillas, mantenga la espalda recta y la carga cerca del cuerpo.</li><li><strong>Utilice el equipo adecuado:</strong> use carros o barriles con ruedas; empuje, no jale, y solo uno a la vez.</li><li><strong>Mantenga rutas despejadas</strong> antes de desplazarse.</li><li><strong>Use el EPP asignado</strong> según la tarea.</li></ul><p><strong>¡Piense antes de mover!</strong> Un buen análisis previo evita lesiones, golpes y accidentes.</p>',image:'assets/materiales_sep/page-1.png',pdf:'docs/manejo-materiales-setiembre.pdf'},
+  satisfaccion:{tag:'Recursos Humanos',tagClass:'recognition',title:'94.40% de satisfacción laboral',lead:'Nuestros funcionarios califican excelente a SBM en el primer semestre de 2026.',body:'<p>El resultado de la aplicación semestral alcanzó un <strong>94.40%</strong> de satisfacción laboral.</p><p>Gracias a todas las personas que participaron en la medición.</p>',image:'assets/rh_sep/page-1.png',pdf:'docs/recursos-humanos-setiembre.pdf'},
+  fcl:{tag:'Recursos Humanos',tagClass:'recognition',title:'Fondo de Capitalización Laboral (FCL)',lead:'Conocer y revisar su FCL ayuda a cuidar su seguridad financiera.',body:'<p>El FCL es un ahorro individual generado a partir de un aporte patronal mensual. El comunicado recomienda revisar el estado de cuenta, verificar los aportes, mantener actualizados los datos de contacto y asesorarse antes de realizar un retiro.</p><p>En la orden patronal puede verificar a cuál operadora de pensiones pertenece.</p>',image:'assets/rh_sep/page-2.png',pdf:'docs/recursos-humanos-setiembre.pdf'},
+  madres:{tag:'Nuestra Gente',tagClass:'recognition',title:'Feliz Día de las Madres 2026',lead:'Compartimos algunos momentos de la celebración en nuestros proyectos.',body:'<p>La edición reúne fotografías de celebraciones realizadas en <strong>Western Union, Deloitte, Equifax Metro, Trelleborg, Baxter Américas y Freudenberg</strong>.</p>',image:'assets/rh_sep/page-3.png',pdf:'docs/recursos-humanos-setiembre.pdf'}
 };
-
-let currentView = 'portada';
-let previousView = 'portada';
-const views = document.querySelectorAll('.view');
-const navLinks = document.querySelectorAll('.nav-link');
-const mobileMenu = document.getElementById('mobileMenu');
-const menuBtn = document.getElementById('menuBtn');
-
-function showView(name, updateHash = true) {
-  const target = document.getElementById(`view-${name}`);
-  if (!target) return;
-  if (name !== 'articulo') previousView = currentView === 'articulo' ? previousView : currentView;
-  currentView = name;
-  views.forEach(v => v.classList.toggle('active', v === target));
-  target.scrollTop = 0;
-  navLinks.forEach(b => b.classList.toggle('active', b.dataset.view === name));
-  mobileMenu.classList.remove('open');
-  menuBtn.setAttribute('aria-expanded', 'false');
-  if (updateHash) history.replaceState(null, '', `#${name}`);
-}
-
-navLinks.forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
-menuBtn.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded', String(open));
-});
-
-document.querySelectorAll('.article-link').forEach(card => {
-  const open = () => openArticle(card.dataset.article);
-  card.addEventListener('click', open);
-  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }});
-});
-
-function openArticle(key) {
-  const data = articleData[key];
-  if (!data) return;
-  previousView = currentView;
-  const tag = document.getElementById('articleTag');
-  tag.textContent = data.tag;
-  tag.className = `tag ${data.tagClass}`;
-  document.getElementById('articleTitle').textContent = data.title;
-  document.getElementById('articleLead').textContent = data.lead;
-  document.getElementById('articleBody').innerHTML = data.body;
-  document.getElementById('articleImage').src = data.image;
-  document.getElementById('articleImage').alt = data.title;
-  document.getElementById('articlePdf').href = data.pdf;
-  document.getElementById('fullImageBtn').dataset.image = data.image;
-  showView('articulo');
-}
-
-document.getElementById('backBtn').addEventListener('click', () => showView(previousView || 'destacados'));
-
-const viewer = document.getElementById('viewer');
-const viewerImage = document.getElementById('viewerImage');
-document.getElementById('fullImageBtn').addEventListener('click', e => {
-  viewerImage.src = e.currentTarget.dataset.image;
-  viewer.showModal();
-});
-document.getElementById('closeViewer').addEventListener('click', () => viewer.close());
-viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && currentView === 'articulo' && !viewer.open) showView(previousView || 'destacados');
-});
-
-const initial = location.hash.replace('#','');
-showView(document.getElementById(`view-${initial}`) ? initial : 'portada', false);
+let currentView='portada',previousView='portada';
+const views=document.querySelectorAll('.view'),navLinks=document.querySelectorAll('.nav-link'),mobileMenu=document.getElementById('mobileMenu'),menuBtn=document.getElementById('menuBtn');
+function showView(name,updateHash=true){const target=document.getElementById(`view-${name}`);if(!target)return;if(name!=='articulo')previousView=currentView==='articulo'?previousView:currentView;currentView=name;views.forEach(v=>v.classList.toggle('active',v===target));target.scrollTop=0;navLinks.forEach(b=>b.classList.toggle('active',b.dataset.view===name));mobileMenu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');if(updateHash)history.replaceState(null,'',`#${name}`)}
+navLinks.forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));menuBtn.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open))});
+document.querySelectorAll('.article-link').forEach(card=>{const open=()=>openArticle(card.dataset.article);card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
+function openArticle(key){const data=articleData[key];if(!data)return;previousView=currentView;const tag=document.getElementById('articleTag');tag.textContent=data.tag;tag.className=`tag ${data.tagClass}`;document.getElementById('articleTitle').textContent=data.title;document.getElementById('articleLead').textContent=data.lead;document.getElementById('articleBody').innerHTML=data.body;document.getElementById('articleImage').src=data.image;document.getElementById('articleImage').alt=data.title;document.getElementById('articlePdf').href=data.pdf;document.getElementById('fullImageBtn').dataset.image=data.image;showView('articulo')}
+document.getElementById('backBtn').addEventListener('click',()=>showView(previousView||'destacados'));const viewer=document.getElementById('viewer'),viewerImage=document.getElementById('viewerImage');document.getElementById('fullImageBtn').addEventListener('click',e=>{viewerImage.src=e.currentTarget.dataset.image;viewer.showModal()});document.getElementById('closeViewer').addEventListener('click',()=>viewer.close());viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&currentView==='articulo'&&!viewer.open)showView(previousView||'destacados')});const initial=location.hash.replace('#','');showView(document.getElementById(`view-${initial}`)?initial:'portada',false);
