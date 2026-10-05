@@ -12,6 +12,6 @@
 @media(max-width:420px){.brand-connect{display:none}.cover-actions{width:100%}.cover-actions .btn{width:100%}.mini-story{grid-template-columns:40% 1fr}.mini-story div{padding:14px}.mini-story p{display:none}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
-/* Setiembre 2026: portada responsive */
+/* Octubre 2026: portada responsive */
 @media (min-width:768px) and (max-width:1100px){.cover-image{object-position:60% center}.cover-overlay{max-width:650px}}
 @media (max-width:767px){.cover-image{object-position:center center}.cover-overlay h1{font-size:clamp(3rem,14vw,4.4rem)}.cover-overlay p{max-width:95%}}
