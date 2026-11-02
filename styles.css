@@ -15,3 +15,6 @@
 /* Octubre 2026: portada responsive */
 @media (min-width:768px) and (max-width:1100px){.cover-image{object-position:60% center}.cover-overlay{max-width:650px}}
 @media (max-width:767px){.cover-image{object-position:center center}.cover-overlay h1{font-size:clamp(3rem,14vw,4.4rem)}.cover-overlay p{max-width:95%}}
+
+/* Invitación editorial: se activará cuando la recepción privada esté configurada */
+.participation-callout{margin:24px 0;padding:24px;border:1px solid rgba(239,108,35,.35);border-radius:18px;background:linear-gradient(120deg,rgba(239,108,35,.12),rgba(255,255,255,.04));max-width:100%}.participation-callout h3{margin:0 0 10px;font-size:1.4rem}.participation-callout p{margin:0 0 14px;line-height:1.6}.participation-callout .tag{display:inline-block}
