@@ -1,0 +1,80 @@
+name: Publicar revista desde ZIP
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'revista.zip'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sbm-conecta-publicacion
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validar y reemplazar la edición
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile, tempfile, shutil, re, sys
+          archive = Path('revista.zip')
+          if not archive.is_file(): sys.exit('Falta revista.zip')
+          with tempfile.TemporaryDirectory() as tmp:
+              root = Path(tmp)
+              with zipfile.ZipFile(archive) as z:
+                  files = [i for i in z.infolist() if not i.is_dir()]
+                  if len(files) > 400: sys.exit('Demasiados archivos en ZIP')
+                  if sum(i.file_size for i in files) > 180_000_000: sys.exit('ZIP demasiado grande')
+                  paths = [Path(i.filename) for i in files]
+                  if any(p.is_absolute() or '..' in p.parts or '\\' in str(p) or (i.external_attr >> 16) & 0o170000 == 0o120000 for p,i in zip(paths,files)):
+                      sys.exit('Rutas o enlaces no permitidos')
+                  names = {p.parts[0] for p in paths if p.parts}
+                  prefix = next(iter(names)) if len(names)==1 else None
+                  for info, p in zip(files, paths):
+                      parts = p.parts[1:] if prefix else p.parts
+                      if not parts: continue
+                      rel = Path(*parts)
+                      if rel.parts[0] not in ('assets','docs','index.html','styles.css','app.js','README.txt'):
+                          sys.exit(f'Archivo no permitido: {rel}')
+                      if rel.parts[0] in ('index.html','styles.css','app.js','README.txt') and len(rel.parts)!=1:
+                          sys.exit(f'Ruta incorrecta: {rel}')
+                      dest = root / rel
+                      dest.parent.mkdir(parents=True,exist_ok=True)
+                      with z.open(info) as source, dest.open('wb') as target:
+                          shutil.copyfileobj(source,target)
+              for name in ('index.html','styles.css','app.js'):
+                  if not (root/name).is_file(): sys.exit(f'Falta {name}')
+              if not (root/'assets').is_dir() or not (root/'docs').is_dir():
+                  sys.exit('Faltan carpetas assets o docs')
+              if not any((root/'assets').rglob('*.*')) or not any((root/'docs').rglob('*.pdf')):
+                  sys.exit('No hay imágenes o documentos')
+              js = (root/'app.js').read_text(encoding='utf-8')
+              html = (root/'index.html').read_text(encoding='utf-8')
+              refs = set(re.findall(r'(?:assets|docs)/[A-Za-z0-9_./-]+\\.(?:png|jpg|jpeg|webp|pdf|svg)',js+html))
+              missing = sorted(ref for ref in refs if not (root/ref).is_file())
+              if missing: sys.exit('Referencias inexistentes: '+', '.join(missing))
+              for folder in ('assets','docs'):
+                  shutil.rmtree(folder,ignore_errors=True)
+                  shutil.copytree(root/folder,folder)
+              for name in ('index.html','styles.css','app.js','README.txt'):
+                  if (root/name).is_file(): shutil.copy2(root/name,name)
+          PY
+      - name: Guardar y publicar
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A assets docs index.html styles.css app.js README.txt
+          git rm -f revista.zip
+          git commit -m "Publicar nueva edición de SBM Conecta y limpiar la anterior"
+          git push
