@@ -20,10 +20,20 @@ async function downloadSlogan(p){
  const shapes=Array.from(xml.getElementsByTagNameNS('http://schemas.openxmlformats.org/presentationml/2006/main','sp'));
  const nodes=shape=>Array.from(shape.getElementsByTagNameNS('http://schemas.openxmlformats.org/drawingml/2006/main','t'));
  const txt=shape=>nodes(shape).map(n=>n.textContent).join('');
- function replaceShape(shape,value){const t=nodes(shape);if(!t.length)throw Error('Falta un campo editable en la plantilla');t[0].textContent=value;for(let i=1;i<t.length;i++)t[i].textContent=''}
+ function replaceShape(shape,value,opts={}){
+ const t=nodes(shape);if(!t.length)throw Error('Falta un campo editable en la plantilla');
+ t[0].textContent=value;for(let i=1;i<t.length;i++)t[i].textContent='';
+ const ns='http://schemas.openxmlformats.org/drawingml/2006/main';
+ const xfrm=shape.getElementsByTagNameNS(ns,'xfrm')[0];
+ if(xfrm&&opts.box){const off=xfrm.getElementsByTagNameNS(ns,'off')[0],ext=xfrm.getElementsByTagNameNS(ns,'ext')[0];
+ if(off){off.setAttribute('x',opts.box[0]);off.setAttribute('y',opts.box[1])}
+ if(ext){ext.setAttribute('cx',opts.box[2]);ext.setAttribute('cy',opts.box[3])}}
+ const body=shape.getElementsByTagNameNS(ns,'bodyPr')[0];if(body){body.setAttribute('wrap','square');body.setAttribute('anchor','ctr')}
+ for(const tag of ['rPr','defRPr','endParaRPr'])for(const el of shape.getElementsByTagNameNS(ns,tag))el.setAttribute('sz',String(opts.font||2200));
+ }
  const slogan=shapes.find(s=>txt(s).includes('Colocar el Slogan'));const attribution=shapes.find(s=>txt(s).includes('nos compartió el slogan'));
  if(!slogan||!attribution)throw Error('No se encontraron los campos de la plantilla RH-F-42');
- replaceShape(slogan,String(p.contenido||''));const first=String(p.nombre||'').trim().split(/\s+/)[0];replaceShape(attribution,'Nuestra compañera '+p.nombre+', del proyecto '+p.proyecto+', nos compartió el slogan que le daría a SBM. ¡Gracias '+first+'!');
+ replaceShape(slogan,String(p.contenido||''),{font:2300,box:[594360,5074920,5669280,1325880]});const first=String(p.nombre||'').trim().split(/\s+/)[0];replaceShape(attribution,'Nuestra compañera '+p.nombre+', del proyecto '+p.proyecto+', nos compartió el slogan que le daría a SBM. ¡Gracias '+first+'!',{font:1400,box:[640080,7360920,5577840,1325880]});
  zip.file('ppt/slides/slide1.xml',new XMLSerializer().serializeToString(xml));
  const blob=await zip.generateAsync({type:'blob',mimeType:'application/vnd.openxmlformats-officedocument.presentationml.presentation'});
  const objectUrl=URL.createObjectURL(blob),a=document.createElement('a');a.href=objectUrl;a.download='SBM_Conecta_Eslogan_'+String(p.nombre||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9]+/g,'_')+'.pptx';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(objectUrl),30000);
